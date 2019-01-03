@@ -19,8 +19,13 @@ def main(script):
 
     script: string script name
     """
+    ex01_2()
     print('%s: All tests passed.' % script)
 
+def ex01_2():
+    dct = thinkstats2.ReadStataDct('2002FemResp.dct')
+    df = dct.ReadFixedWidth('2002FemResp.dat.gz', compression='gzip')
+    print(df.pregnum.value_counts().sort_index())
 
 if __name__ == '__main__':
     main(*sys.argv)
